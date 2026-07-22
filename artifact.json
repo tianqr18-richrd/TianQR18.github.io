@@ -5,14 +5,14 @@
     "surface": "dashboard",
     "title": "PEFE Pulse-Gate S11 Explorer — 22 July 2026",
     "description": "Interactive three-level pulse-gate S11 and temperature explorer for the usable acquisitions recorded on 22 July 2026.",
-    "generatedAt": "2026-07-22T19:47:27.011641+00:00",
+    "generatedAt": "2026-07-22T19:48:59.697314+00:00",
     "filters": [
       {
         "id": "experiment-run",
         "label": "Experiment",
         "dataset": "run_summary",
         "field": "run",
-        "defaultValue": "PBS3_24 · 19:53:04",
+        "defaultValue": "PBS2_96R · 18:05:02",
         "includeAll": false,
         "targets": [
           {
@@ -882,7 +882,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/usable_run_summary.csv');",
           "description": "Run-level metadata and derived quality/coverage summary for the usable acquisitions.",
-          "executed_at": "2026-07-22T19:47:27.011653+00:00",
+          "executed_at": "2026-07-22T19:48:59.697329+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -907,7 +907,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level1_global_per_second.csv');",
           "description": "One pulse-gate S11 aggregate per second, with temperature interpolated to the same timestamps.",
-          "executed_at": "2026-07-22T19:47:27.011658+00:00",
+          "executed_at": "2026-07-22T19:48:59.697334+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -932,7 +932,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level2_selected_second_per_pulse.csv');",
           "description": "One S11 estimate per valid 1 ms pulse inside the selected second, with temperature interpolated per pulse.",
-          "executed_at": "2026-07-22T19:47:27.011661+00:00",
+          "executed_at": "2026-07-22T19:48:59.697337+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -957,7 +957,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level3_selected_pulse_high_gate_samples.csv');",
           "description": "Samplewise S11 within the edge-trimmed RF HIGH gate of the selected 1 ms pulse; temperature is constant over this microsecond-scale view.",
-          "executed_at": "2026-07-22T19:47:27.011663+00:00",
+          "executed_at": "2026-07-22T19:48:59.697340+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -1109,7 +1109,7 @@
   },
   "snapshot": {
     "version": 1,
-    "generatedAt": "2026-07-22T19:47:27.011641+00:00",
+    "generatedAt": "2026-07-22T19:48:59.697314+00:00",
     "status": "ready",
     "datasets": {
       "run_summary": [
@@ -55473,7 +55473,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/usable_run_summary.csv');",
         "description": "Run-level metadata and derived quality/coverage summary for the usable acquisitions.",
-        "executed_at": "2026-07-22T19:47:27.011653+00:00",
+        "executed_at": "2026-07-22T19:48:59.697329+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55498,7 +55498,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level1_global_per_second.csv');",
         "description": "One pulse-gate S11 aggregate per second, with temperature interpolated to the same timestamps.",
-        "executed_at": "2026-07-22T19:47:27.011658+00:00",
+        "executed_at": "2026-07-22T19:48:59.697334+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55523,7 +55523,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level2_selected_second_per_pulse.csv');",
         "description": "One S11 estimate per valid 1 ms pulse inside the selected second, with temperature interpolated per pulse.",
-        "executed_at": "2026-07-22T19:47:27.011661+00:00",
+        "executed_at": "2026-07-22T19:48:59.697337+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55548,7 +55548,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level3_selected_pulse_high_gate_samples.csv');",
         "description": "Samplewise S11 within the edge-trimmed RF HIGH gate of the selected 1 ms pulse; temperature is constant over this microsecond-scale view.",
-        "executed_at": "2026-07-22T19:47:27.011663+00:00",
+        "executed_at": "2026-07-22T19:48:59.697340+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
