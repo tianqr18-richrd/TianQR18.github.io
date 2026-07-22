@@ -5,7 +5,7 @@
     "surface": "dashboard",
     "title": "PEFE Pulse-Gate S11 Explorer — 22 July 2026",
     "description": "Interactive three-level pulse-gate S11 and temperature explorer for the usable acquisitions recorded on 22 July 2026.",
-    "generatedAt": "2026-07-22T19:48:59.697314+00:00",
+    "generatedAt": "2026-07-22T20:40:04.625160+00:00",
     "filters": [
       {
         "id": "experiment-run",
@@ -156,7 +156,7 @@
     "charts": [
       {
         "id": "l1-temp",
-        "title": "Level 1 — Global temperature",
+        "title": "Level 1 — Temperature",
         "subtitle": "The two vertical guides bound the selected 1 s window; temperature uses the same time basis as Level 1 S11.",
         "showDescription": true,
         "intent": "trend",
@@ -233,8 +233,8 @@
       },
       {
         "id": "l1-mag",
-        "title": "Level 1 — Global pulse-gate S11 magnitude (1 point/s)",
-        "subtitle": "Notebook-style global view. The vertical guides bound the selected second used by Level 2.",
+        "title": "Level 1 — S11 magnitude",
+        "subtitle": "One pulse-gate point per second. The vertical guides bound the second used by Level 2.",
         "showDescription": true,
         "intent": "trend",
         "question": "How does s11 magnitude vary across time from selected-second centre?",
@@ -310,7 +310,7 @@
       },
       {
         "id": "l1-phase",
-        "title": "Level 1 — Global pulse-gate S11 phase (1 point/s)",
+        "title": "Level 1 — S11 phase",
         "subtitle": "Circularly aggregated and unwrapped. The vertical guides bound the selected second.",
         "showDescription": true,
         "intent": "trend",
@@ -387,7 +387,7 @@
       },
       {
         "id": "l2-temp",
-        "title": "Level 2 — Temperature inside selected 1 s",
+        "title": "Level 2 — Temperature",
         "subtitle": "The vertical reference marks the selected 1 ms pulse that feeds Level 3.",
         "showDescription": true,
         "intent": "trend",
@@ -457,7 +457,7 @@
       },
       {
         "id": "l2-mag",
-        "title": "Level 2 — Pulse-gate S11 magnitude inside selected 1 s",
+        "title": "Level 2 — S11 magnitude",
         "subtitle": "One RF HIGH pulse-gate estimate per valid 1 ms pulse; the reference line is the selected pulse.",
         "showDescription": true,
         "intent": "trend",
@@ -527,8 +527,8 @@
       },
       {
         "id": "l2-phase",
-        "title": "Level 2 — Pulse-gate phase inside selected 1 s",
-        "subtitle": "Unwrapped phase; the reference line is the selected pulse passed to Level 3.",
+        "title": "Level 2 — S11 phase",
+        "subtitle": "Unwrapped phase; the reference line is the pulse passed to Level 3.",
         "showDescription": true,
         "intent": "trend",
         "question": "How does s11 phase vary across time from selected pulse?",
@@ -597,7 +597,7 @@
       },
       {
         "id": "l3-temp",
-        "title": "Level 3 — Selected-pulse temperature",
+        "title": "Level 3 — Temperature",
         "subtitle": "Temperature at the selected pulse, repeated over its microsecond-scale HIGH gate for alignment.",
         "showDescription": true,
         "intent": "trend",
@@ -658,8 +658,8 @@
       },
       {
         "id": "l3-mag",
-        "title": "Level 3 — Selected 1 ms pulse S11 magnitude",
-        "subtitle": "Only retained RF HIGH samples after notebook edge trimming are plotted.",
+        "title": "Level 3 — S11 magnitude",
+        "subtitle": "Only retained RF HIGH samples from the selected 1 ms pulse are plotted.",
         "showDescription": true,
         "intent": "trend",
         "question": "How does s11 magnitude vary across time inside selected 1 ms pulse?",
@@ -719,8 +719,8 @@
       },
       {
         "id": "l3-phase",
-        "title": "Level 3 — Selected 1 ms pulse phase (HIGH gate only)",
-        "subtitle": "Only retained RF HIGH samples after notebook edge trimming are plotted.",
+        "title": "Level 3 — S11 phase",
+        "subtitle": "Only retained RF HIGH samples from the selected 1 ms pulse are plotted.",
         "showDescription": true,
         "intent": "trend",
         "question": "How does s11 phase vary across time inside selected 1 ms pulse?",
@@ -783,14 +783,14 @@
       {
         "id": "selected-run-details",
         "title": "Selected experiment details",
-        "subtitle": "Exact acquisition and drill-down coverage for the current selection.",
+        "subtitle": "Key acquisition and drill-down values for the current selection.",
         "showDescription": true,
         "dataset": "run_summary",
         "defaultSort": {
           "field": "sample",
           "direction": "asc"
         },
-        "density": "spacious",
+        "density": "compact",
         "sourceId": "source-summary",
         "layout": "full",
         "columns": [
@@ -805,16 +805,6 @@
             "type": "number"
           },
           {
-            "field": "selected_second_start_s",
-            "label": "Second start (s)",
-            "type": "number"
-          },
-          {
-            "field": "selected_second_stop_s",
-            "label": "Second stop (s)",
-            "type": "number"
-          },
-          {
             "field": "selected_pulse_number",
             "label": "Selected pulse #",
             "type": "number"
@@ -822,31 +812,6 @@
           {
             "field": "selected_pulse_time_ms",
             "label": "Pulse time (ms)",
-            "type": "number"
-          },
-          {
-            "field": "treatment_duty_pct",
-            "label": "Treatment duty (%)",
-            "type": "number"
-          },
-          {
-            "field": "cooling_duty_pct",
-            "label": "Cooling duty (%)",
-            "type": "number"
-          },
-          {
-            "field": "global_points",
-            "label": "Level 1 points",
-            "type": "number"
-          },
-          {
-            "field": "selected_second_pulses",
-            "label": "Level 2 pulses",
-            "type": "number"
-          },
-          {
-            "field": "selected_pulse_samples",
-            "label": "Level 3 samples",
             "type": "number"
           },
           {
@@ -860,14 +825,14 @@
             "type": "number"
           },
           {
-            "field": "dropped_blocks",
-            "label": "Dropped blocks",
+            "field": "selected_pulse_samples",
+            "label": "Level 3 samples",
             "type": "number"
           },
           {
-            "field": "shared_lo_verified",
-            "label": "Shared LO verified",
-            "type": "text"
+            "field": "dropped_blocks",
+            "label": "Dropped blocks",
+            "type": "number"
           }
         ]
       }
@@ -882,7 +847,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/usable_run_summary.csv');",
           "description": "Run-level metadata and derived quality/coverage summary for the usable acquisitions.",
-          "executed_at": "2026-07-22T19:48:59.697329+00:00",
+          "executed_at": "2026-07-22T20:40:04.625174+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -907,7 +872,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level1_global_per_second.csv');",
           "description": "One pulse-gate S11 aggregate per second, with temperature interpolated to the same timestamps.",
-          "executed_at": "2026-07-22T19:48:59.697334+00:00",
+          "executed_at": "2026-07-22T20:40:04.625181+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -932,7 +897,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level2_selected_second_per_pulse.csv');",
           "description": "One S11 estimate per valid 1 ms pulse inside the selected second, with temperature interpolated per pulse.",
-          "executed_at": "2026-07-22T19:48:59.697337+00:00",
+          "executed_at": "2026-07-22T20:40:04.625184+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -957,7 +922,7 @@
           "language": "sql",
           "sql": "SELECT * FROM read_csv_auto('data/level3_selected_pulse_high_gate_samples.csv');",
           "description": "Samplewise S11 within the edge-trimmed RF HIGH gate of the selected 1 ms pulse; temperature is constant over this microsecond-scale view.",
-          "executed_at": "2026-07-22T19:48:59.697340+00:00",
+          "executed_at": "2026-07-22T20:40:04.625187+00:00",
           "filters": [
             "Run date is 22 July 2026.",
             "RF OFF and all out-of-pulse samples are excluded.",
@@ -979,7 +944,7 @@
         "id": "intro",
         "type": "markdown",
         "layout": "full",
-        "body": "Select an experiment with the **Experiment** control above. The selection panel then shows the exact notebook-selected second and pulse. Every temperature trace and S11 chart updates together. The three-level view begins immediately after the selection panel.\n\n**Coverage:** 22 usable runs from 22 July 2026 are included. 1 run is excluded because no valid pulse-gate S11 remained after the notebook quality filters."
+        "body": "Select an experiment with the **Experiment** control above. The selection panel then shows the exact notebook-selected second and pulse. Every temperature trace and S11 chart updates together. The three-level view begins immediately after the selection panel. On desktop, magnitude and phase share a row; on iPhone, they stack into a touch-friendly single column.\n\n**Coverage:** 22 usable runs from 22 July 2026 are included. 1 run is excluded because no valid pulse-gate S11 remained after the notebook quality filters."
       },
       {
         "id": "selection-heading",
@@ -1109,7 +1074,7 @@
   },
   "snapshot": {
     "version": 1,
-    "generatedAt": "2026-07-22T19:48:59.697314+00:00",
+    "generatedAt": "2026-07-22T20:40:04.625160+00:00",
     "status": "ready",
     "datasets": {
       "run_summary": [
@@ -55473,7 +55438,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/usable_run_summary.csv');",
         "description": "Run-level metadata and derived quality/coverage summary for the usable acquisitions.",
-        "executed_at": "2026-07-22T19:48:59.697329+00:00",
+        "executed_at": "2026-07-22T20:40:04.625174+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55498,7 +55463,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level1_global_per_second.csv');",
         "description": "One pulse-gate S11 aggregate per second, with temperature interpolated to the same timestamps.",
-        "executed_at": "2026-07-22T19:48:59.697334+00:00",
+        "executed_at": "2026-07-22T20:40:04.625181+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55523,7 +55488,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level2_selected_second_per_pulse.csv');",
         "description": "One S11 estimate per valid 1 ms pulse inside the selected second, with temperature interpolated per pulse.",
-        "executed_at": "2026-07-22T19:48:59.697337+00:00",
+        "executed_at": "2026-07-22T20:40:04.625184+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
@@ -55548,7 +55513,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_csv_auto('data/level3_selected_pulse_high_gate_samples.csv');",
         "description": "Samplewise S11 within the edge-trimmed RF HIGH gate of the selected 1 ms pulse; temperature is constant over this microsecond-scale view.",
-        "executed_at": "2026-07-22T19:48:59.697340+00:00",
+        "executed_at": "2026-07-22T20:40:04.625187+00:00",
         "filters": [
           "Run date is 22 July 2026.",
           "RF OFF and all out-of-pulse samples are excluded.",
